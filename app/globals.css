@@ -9,12 +9,25 @@
     animation: scroll 20s linear infinite;
 }
 
+.animate-scroll-ii {
+    animation: scrollii 20s linear infinite;
+}
+
 @keyframes scroll {
     0% {
         transform: translateX(0);
     }
     100% {
         transform: translateX(-100%);
+    }
+}
+
+@keyframes scrollii {
+     0% {
+        transform: translateX(-50%); /* Start at the middle since content is doubled */
+    }
+    100% {
+        transform: translateX(0); /* Move to the start for right-to-left */
     }
 }
 

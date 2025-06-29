@@ -129,8 +129,8 @@ const SignatureCreations = () => {
         },
     ]
   return (
-    <div className='px-24'>
-        <div className='flex justify-between items-center'>
+    <div className=''>
+        <div className='px-24 flex justify-between items-center'>
             <div>
                 <h1 className='text-[#03552A] font-extrabold text-[40px]'>Our Signature Creations</h1>
             </div>
@@ -148,19 +148,68 @@ const SignatureCreations = () => {
         </div>
 
         {/* Main Dishes */}
-        <div>
-            <h1 className='text-[#03552A] font-semibold text-2xl py-4'>Main Dishes</h1>
-            <div className='overflow-x-hidden'>
-                <div className='flex flex-row gap-6 animate-scroll'>
-                    {signatureMain.map((item) => (
-                        <div key={item.id} className='p-4 min-w-[250px]'>
-                            <img src={item.image} alt={item.name} className='w-full object-cover rounded-lg' />
-                            <p className='text-[#03552A]'>{item.description}</p>
-                        </div>
-                    ))}
+        <div className='flex'>
+            <div className='w-11/12'>
+                <div className='overflow-x-hidden'>
+                    <div className='flex flex-row gap-6 animate-scroll'>
+                        {signatureMain.map((item) => (
+                            <div key={item.id} className='p-4 min-w-[250px]'>
+                                <img src={item.image} alt={item.name} className='w-full object-cover rounded-lg' />
+                                <p className='text-[#03552A]'>{item.description}</p>
+                            </div>
+                        ))}
+                        {signatureMain.map((item) => (
+                            <div key={`second-${item.id}`} className='p-4 min-w-[250px]'>
+                                <img src={item.image} alt={item.name} className='w-full object-cover rounded-lg' />
+                                <p className='text-[#03552A]'>{item.description}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
+            {/* Main Course Title */}
+            <div className='w-1/12   flex items-center justify-center'>
+
+                
+                <div className='w-3/6'>
+
+                </div>
+
+                <div className='w-3/6 rounded-l-4xl bg-amber-300 h-60 flex items-center justify-center '>
+                            <h1 className='text-[#03552A] font-semibold text-2xl transform rotate-90 whitespace-nowrap'>
+                        Main Course
+                    </h1>
+                </div>
+                
+            </div>
         </div>
+        {/* Side Dishes */}
+        <div className='flex'>
+            
+            <div className='w-1/12 bg-amber-300 flex items-center justify-center'>
+                <h1 className=' text-[#03552A] font-semibold text-2xl transform rotate-270 whitespace-nowrap'>
+                    Side Dishes
+                </h1>
+            </div>
+
+            <div className='w-11/12'>
+                <div className='overflow-x-hidden'>
+                    <div className='flex flex-row gap-6 animate-scroll-ii'>
+                        {signatureSide.map((item) => (
+                            <div key={item.id} className='p-4 min-w-[250px]'>
+                                <img src={item.image} alt={item.name} className='w-full object-cover rounded-lg' />
+                                <p className='text-[#03552A]'>{item.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+           
+
+            
+        </div>
+
+        
     </div>
   )
 }
