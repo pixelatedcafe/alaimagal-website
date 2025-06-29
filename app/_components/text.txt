@@ -1,0 +1,36 @@
+import React from 'react'
+
+const About = () => {
+  return (
+    <div className="bg-[url('/hero-bg-1.png')]  w-full h-screen bg-cover bg-center">
+        <div className='py-16 px-24'>
+            <h1 className='text-white font-extrabold text-4xl'>About Alaimagal Hotels</h1>
+            <div className='bg-white/60 py-5  flex justify-center w-full rounded'>
+                <div className=' w-7/12 text-white'>
+                    <h3>Welcome to Alaimagal Hotels</h3>
+                    <h6>A Taste of Tradition</h6>
+
+                    <div>
+                    <p>
+                        At Alaimagal Hotels, we take pride in serving authentic Tamil Nadu-style non-vegetarian cuisine with age-old recipes passed down through generations. Established with a passion for rich flavors and heartfelt hospitality, our hotel stands as a humble tribute to the culinary heritage of our land.
+                    </p>
+                    <p>
+                        Located at the heart of the community, Alaimagal Hotels is more than just a place to eat – it’s a place where tradition meets taste. Every dish we serve – from spicy mutton biryani and flavorful naatu kozhi kuzhambu to soul-satisfying fish fry – is prepared with handpicked ingredients and traditional cooking methods that bring out the true essence of Tamil cuisine.
+                    </p>
+                    <p>
+                        We believe in warm service, generous portions, and unforgettable flavors. Whether you are here for a hearty lunch or a festive family dinner, our goal is to make you feel at home with every bite.
+                    </p>
+                </div>
+                </div>
+                
+                <div className='w-5/12 flex justify-center items-center'>
+                    <img src='/about-us-logo.png' alt='About Alaimagal Hotels' className='w-[400px]' />
+                </div>
+
+            </div>
+        </div>
+    </div>
+  )
+}
+
+export default About
