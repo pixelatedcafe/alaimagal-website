@@ -4,15 +4,15 @@ import { IoLocationOutline } from "react-icons/io5";
 
 const Footer = () => {
   return (
-    <div className="bg-[url('/footer.svg')] m-5 h-96 bg-cover bg-center">
-      <div className='flex w-full h-80 items-center justify-between'>
-        <div className='w-4/12 flex justify-center items-center '>
-            <img src="/footer-logo-1.png" alt="Alaimagal Hotels Logo" className="w-96 p-10" />
+    <div className="relative bg-[url('/footer-bg-2.png')] bg-cover bg-center">
+      <div className='flex w-full p-5 h-86 items-center justify-between'>
+        <div className='w-3/12 flex justify-center items-center '>
+            <img src="/footer-bg-1.png" alt="Alaimagal Hotels Logo" className="w-96 p-10" />
         </div>
 
-        <div className='h-72 w-2/12 '>
-          <h1 className='text-3xl font-bold'>Quick Links</h1>
-          <ul className="list-none space-y-4 pt-5 font-semibold text-lg">
+        <div className='h-72 w-2/12 flex flex-col justify-center items-center'>
+          <h1 className='text-3xl font-bold font-sansita'>Quick Links</h1>
+          <ul className="list-none space-y-4 pt-4 text-center text-lg">
             <li className="">Home</li>
             <li className="">Signatures</li>
             <li className="">Menu</li>
@@ -22,17 +22,17 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className='h-72 w-2/12'>
-          <h1 className='text-3xl font-bold'>Reach out us</h1>
-          <div className='pt-5 space-y-4 text-lg '>
-            <div>
-              <TbPhoneCall />
-              <p className="">+91 96260 66228</p>
-              <p className="">+91 86675 90755</p>
+        <div className='h-80 w-3/12 flex flex-col justify-center items-center'>
+          <h1 className='text-3xl font-bold font-sansita'>Reach out us</h1>
+          <div className='pt-5 space-y-4.5 text-lg '>
+            <div className='flex flex-col items-center'>
+              <p className='text-center font-bold text-xl'><TbPhoneCall /></p>
+              <p className="pt-2 text-center">+91 96260 66228</p>
+              <p className="text-center">+91 86675 90755</p>
             </div>
-            <div>
-              <IoLocationOutline />
-              <p>GG Complex, <br />
+            <div className='flex flex-col items-center'>
+              <p className='text-xl text-center font-bold'><IoLocationOutline /></p>
+              <p className='pt-2 text-center'>GG Complex, <br />
 81, Vivekananda Rd,<br />
 Near Canara Bank ATM, <br/>Ram Nagar, Coimbatore - 641009</p>
             </div>
@@ -51,10 +51,22 @@ Near Canara Bank ATM, <br/>Ram Nagar, Coimbatore - 641009</p>
           </iframe>
         </div>
       </div>
-        <div className='h-16 flex flex-col items-center justify-center spacce-y-1'>
-          <p>© 2025 Alaimagal Hotels. All rights reserved.</p>
-          <p>Crafted with <span className="text-red-500">♥</span> by <a target="_blank" href='https://www.thepixelatedcafe.com'>The Pixelated Café</a></p>
-        </div>
+      <div className='h-16 flex flex-col items-center justify-center spacce-y-1'>
+        <p>© 2025 Alaimagal Hotels. All rights reserved.</p>
+        <p>Plated Digitally by <a className='font-semibold' target="_blank" href='https://www.thepixelatedcafe.com'>The Pixelated Café</a></p>
+      </div>
+      <div className='absolute top-0 left-0'>
+        <img src="/1.png" alt="Footer Background" className="" />
+      </div>
+       <div className='absolute bottom-0 left-0'>
+        <img src="/4.png" alt="Footer Background" className="" />
+      </div>
+       <div className='absolute top-0 right-0'>
+        <img src="/2.png" alt="Footer Background" className="" />
+      </div>
+       <div className='absolute bottom-0 right-0'>
+        <img src="/3.png" alt="Footer Background" className="" />
+      </div>
 
     </div>
   )

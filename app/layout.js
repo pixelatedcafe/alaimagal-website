@@ -1,7 +1,16 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import { Sansita_Swashed } from 'next/font/google';
 import "./globals.css";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
+
+
+
+const sansita = Sansita_Swashed({
+  subsets: ['latin'],
+  weight: ['300', '400', '700', '900'],
+  variable: '--font-sansita',
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +31,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${sansita.variable} antialiased`}
       >
         {/* <Navbar /> */}
         {children}
