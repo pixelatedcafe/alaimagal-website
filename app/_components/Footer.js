@@ -1,6 +1,7 @@
 import React from 'react'
 import { TbPhoneCall } from "react-icons/tb";
 import { IoLocationOutline } from "react-icons/io5";
+import { sansita } from '../layout';
 
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
         </div>
 
         <div className='h-72 w-2/12 flex flex-col justify-center items-center'>
-          <h1 className='text-3xl font-bold font-sansita'>Quick Links</h1>
+          <h1 className={`${sansita.className} text-3xl font-bold font-sansita`}>Quick Links</h1>
           <ul className="list-none space-y-4 pt-4 text-center text-lg">
             <li className="">Home</li>
             <li className="">Signatures</li>
@@ -23,7 +24,7 @@ const Footer = () => {
         </div>
 
         <div className='h-80 w-3/12 flex flex-col justify-center items-center'>
-          <h1 className='text-3xl font-bold font-sansita'>Reach out us</h1>
+          <h1 className={`${sansita.className} text-3xl font-bold font-sansita `}>Reach out us</h1>
           <div className='pt-5 space-y-4.5 text-lg '>
             <div className='flex flex-col items-center'>
               <p className='text-center font-bold text-xl'><TbPhoneCall /></p>

@@ -6,7 +6,7 @@
 }
 
 .animate-scroll {
-    animation: scroll 20s linear infinite;
+    animation: scroll 30s linear infinite;
 }
 
 .animate-scroll-ii {
@@ -32,6 +32,10 @@
 }
 
 /* Optional: Pause on hover */
+.animate-scroll-ii:hover {
+    animation-play-state: paused;
+}
+
 .animate-scroll:hover {
     animation-play-state: paused;
 }

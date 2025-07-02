@@ -3,130 +3,95 @@ import { IoDownload } from "react-icons/io5";
 
 const SignatureCreations = () => {
 
-    const signatureMain = [
-        {
-            id: 1,
-            name: 'Signature Chicken Biryani',
-            description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/signature-chicken-biryani.png',
-        },
-        {
-            id: 1,
-            name: 'Signature Chicken Biryani',
-            description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/signature-chicken-biryani.png',
-        },
-        {
-            id: 1,
-            name: 'Signature Chicken Biryani',
-            description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/signature-chicken-biryani.png',
-        },
-        {
-            id: 1,
-            name: 'Signature Chicken Biryani',
-            description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/signature-chicken-biryani.png',
-        },
-        {
-            id: 1,
-            name: 'Signature Chicken Biryani',
-            description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/signature-chicken-biryani.png',
-        },
-        {
-            id: 1,
-            name: 'Signature Chicken Biryani',
-            description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/signature-chicken-biryani.png',
-        },
-        {
-            id: 1,
-            name: 'Signature Chicken Biryani',
-            description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/signature-chicken-biryani.png',
-        },
-        {
-            id: 1,
-            name: 'Signature Chicken Biryani',
-            description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/signature-chicken-biryani.png',
-        },
-        {
-            id: 1,
-            name: 'Signature Chicken Biryani',
-            description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/signature-chicken-biryani.png',
-        },
-        {
-            id: 1,
-            name: 'Signature Chicken Biryani',
-            description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/signature-chicken-biryani.png',
-        },
-    ]
+   const signatureMain = [
+    {
+        id: 1,
+        name: 'Signature Full Meals',
+        description: 'A royal spread of Alaimagal’s finest — biryani, raita, egg, gravy, and sweets, all plated with love. The ultimate feast for kings and queens of spice.',
+        image: '/main_full_meals.png',
+    },
+    {
+        id: 2,
+        name: 'Signature Chicken Biryani',
+        description: 'Slow-cooked seeraga samba rice layered with marinated chicken and aromatic masalas. Served with raita, this is Alaimagal’s timeless masterpiece.',
+        image: '/main_chicken_briyani.png',
+    },
+    {
+        id: 3,
+        name: 'Signature Chicken Fried Rice',
+        description: 'Wok-fried perfection with shredded chicken, crunchy veggies, and bold flavors in every grain. A street-style favorite turned signature dish.',
+        image: '/main_chicken_fried_rice.png',
+    },
+    {
+        id: 4,
+        name: 'Signature Chicken Kothu',
+        description: 'Chopped parotta mingled with spicy chicken, eggs, and gravy — a sizzling, smoky showstopper straight from the tawa to your soul.',
+        image: '/main_chicken_kothu.png',
+    },
+    {
+        id: 5,
+        name: 'Signature Chicken Laba',
+        description: 'Tender chicken cooked in a fiery, thick gravy bursting with flavor and tradition. Perfect with parotta or dosa, it’s Sunday lunch vibes any day.',
+        image: '/main_chicken_laba.png',
+    },
+    {
+        id: 6,
+        name: 'Signature Kari Dosa',
+        description: 'Crisp dosa crowned with spicy minced mutton masala. Crispy outside, juicy inside — a match made in Alaimagal heaven.',
+        image: '/main_kari_dosa.png',
+    },
+    {
+        id: 7,
+        name: 'Signature Szechuan Fried Rice',
+        description: 'Alaimagal’s Indo-Chinese twist — fiery Szechuan sauce tossed with rice, chicken, and veggies. Bold, bright, and blazing with flavor.',
+        image: '/main_szechuan_fried_rice.png',
+    }
+];
+
 
     const signatureSide = [
         {
             id: 1,
+            name: 'Signature Full Meals',
+            description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
+            image: '/main_full_meals.png',
+        },
+        {
+            id: 2,
             name: 'Signature Chicken Biryani',
             description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/signature-chicken-biryani.png',
+            image: '/main_chicken_briyani.png',
         },
         {
             id: 1,
-            name: 'Signature Chicken Biryani',
+            name: 'Signature Chicken Fried Rice',
             description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/signature-chicken-biryani.png',
+            image: '/main_chicken_fried_rice.png',
         },
         {
             id: 1,
-            name: 'Signature Chicken Biryani',
+            name: 'Signature Chicken Kothu',
             description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/signature-chicken-biryani.png',
+            image: '/main_chicken_kothu.png',
         },
         {
             id: 1,
-            name: 'Signature Chicken Biryani',
+            name: 'Signature Chicken Laba',
             description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/signature-chicken-biryani.png',
+            image: '/main_chicken_laba.png',
         },
         {
             id: 1,
-            name: 'Signature Chicken Biryani',
+            name: 'Signature Kari Dosa',
             description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/signature-chicken-biryani.png',
+            image: '/main_kari_dosa.png.png',
         },
         {
             id: 1,
-            name: 'Signature Chicken Biryani',
+            name: 'Signature Szechuan Fried Rice',
             description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/signature-chicken-biryani.png',
-        },
-        {
-            id: 1,
-            name: 'Signature Chicken Biryani',
-            description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/signature-chicken-biryani.png',
-        },
-        {
-            id: 1,
-            name: 'Signature Chicken Biryani',
-            description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/signature-chicken-biryani.png',
-        },
-        {
-            id: 1,
-            name: 'Signature Chicken Biryani',
-            description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/signature-chicken-biryani.png',
-        },
-        {
-            id: 1,
-            name: 'Signature Chicken Biryani',
-            description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/signature-chicken-biryani.png',
-        },
+            image: '/main_szechuan_fried_rice.png',
+        }
     ]
   return (
     <div className=''>
@@ -149,56 +114,69 @@ const SignatureCreations = () => {
 
         {/* Main Dishes */}
         <div className='flex'>
-            <div className='w-11/12'>
+            <div className='relative w-full'>
                 <div className='overflow-x-hidden'>
                     <div className='flex flex-row gap-6 animate-scroll'>
-                        {signatureMain.map((item) => (
-                            <div key={item.id} className='p-4 min-w-[250px]'>
-                                <img src={item.image} alt={item.name} className='w-full object-cover rounded-lg' />
-                                <p className='text-[#03552A]'>{item.description}</p>
+                        {signatureMain.map((item,index) => (
+                            <div key={item.id} className=' flex items-center '>
+                                <div className='p-4 flex flex-col items-center min-w-[400px]'>
+                                    <img src={item.image} alt={item.name} className='w-full object-cover rounded-lg' />
+                                    <p className='text-[#03552A] text-justify'>{item.description}</p>    
+                                </div>
+                                
+                                {index < signatureMain.length - 1 && (
+                                    <img
+                                    src= '/seperator.png'// Replace with your image URL
+                                    alt='separator'
+                                    className='h-[300]' // Adjust size and styling as needed
+                                    />
+                                )}
                             </div>
                         ))}
                         {signatureMain.map((item) => (
-                            <div key={`second-${item.id}`} className='p-4 min-w-[250px]'>
+                            <div key={`second-${item.id}`} className='p-4 min-w-[400px]'>
                                 <img src={item.image} alt={item.name} className='w-full object-cover rounded-lg' />
-                                <p className='text-[#03552A]'>{item.description}</p>
+                                <p className='text-[#03552A] text-justify'>{item.description}</p>
                             </div>
                         ))}
                     </div>
                 </div>
-            </div>
-            {/* Main Course Title */}
-            <div className='w-1/12   flex items-center justify-center'>
-
-                
-                <div className='w-3/6'>
-
-                </div>
-
-                <div className='w-3/6 rounded-l-4xl bg-amber-300 h-60 flex items-center justify-center '>
-                            <h1 className='text-[#03552A] font-semibold text-2xl transform rotate-90 whitespace-nowrap'>
+                <div className='absolute w-[55px] right-0 top-4 rounded-l-4xl bg-[#03552A] h-55 flex items-center justify-center '>
+                            <h1 className='text-white font-bold text-2xl transform rotate-90 whitespace-nowrap'>
                         Main Course
                     </h1>
                 </div>
-                
             </div>
+
+            
         </div>
         {/* Side Dishes */}
         <div className='flex'>
             
-            <div className='w-1/12 bg-amber-300 flex items-center justify-center'>
-                <h1 className=' text-[#03552A] font-semibold text-2xl transform rotate-270 whitespace-nowrap'>
-                    Side Dishes
-                </h1>
-            </div>
+            
 
-            <div className='w-11/12'>
+            <div className='relative w-full'>
+                <div className='absolute w-[50px] z-10 left-0 top-4 rounded-r-4xl bg-[#03552A] h-55 flex items-center justify-center opacity-100 '>
+                    <h1 className=' text-white font-semibold text-2xl transform rotate-270 whitespace-nowrap'>
+                        Side Dishes
+                    </h1>
+                </div>
                 <div className='overflow-x-hidden'>
                     <div className='flex flex-row gap-6 animate-scroll-ii'>
-                        {signatureSide.map((item) => (
-                            <div key={item.id} className='p-4 min-w-[250px]'>
-                                <img src={item.image} alt={item.name} className='w-full object-cover rounded-lg' />
-                                <p className='text-[#03552A]'>{item.description}</p>
+                        {signatureSide.map((item,index) => (
+                            <div key={item.id} className='flex items-center'>
+                                <div className='p-4 flex flex-col items-center min-w-[400px]'>
+                                    <img src={item.image} alt={item.name} className='w-full object-cover rounded-lg' />
+                                    <p className='text-[#03552A]'>{item.description}</p>
+                                </div>
+                                {index < signatureMain.length - 1 && (
+                                    <img
+                                    src= '/seperator.png'// Replace with your image URL
+                                    alt='separator'
+                                    className='h-[300]' // Adjust size and styling as needed
+                                    />
+                                )}
+                                
                             </div>
                         ))}
                     </div>

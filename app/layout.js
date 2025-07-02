@@ -6,7 +6,7 @@ import Footer from "./_components/Footer";
 
 
 
-const sansita = Sansita_Swashed({
+export const sansita = Sansita_Swashed({
   subsets: ['latin'],
   weight: ['300', '400', '700', '900'],
   variable: '--font-sansita',
