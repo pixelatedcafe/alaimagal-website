@@ -49,50 +49,51 @@ const SignatureCreations = () => {
 ];
 
 
-    const signatureSide = [
-        {
-            id: 1,
-            name: 'Signature Full Meals',
-            description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/side_chicken_65.png',
-        },
-        {
-            id: 2,
-            name: 'Signature Chicken Biryani',
-            description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/side_lemon_chicken.png'
-        },
-        {
-            id: 1,
-            name: 'Signature Chicken Fried Rice',
-            description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/side_kholikondattam.png',
-        },
-        {
-            id: 1,
-            name: 'Signature Chicken Kothu',
-            description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/side_pallipalayam.png',
-        },
-        {
-            id: 1,
-            name: 'Signature Chicken Laba',
-            description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/side_uppu_kari.png',
-        },
-        {
-            id: 1,
-            name: 'Signature Kari Dosa',
-            description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/side_green_65.png',
-        },
-        {
-            id: 1,
-            name: 'Signature Szechuan Fried Rice',
-            description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/side_varutha_kari.png',
-        }
-    ]
+  const signatureSide = [
+    {
+        id: 1,
+        name: 'Signature Chicken 65',
+        description: 'Deep-fried chunks of chicken, crisp on the outside, juicy inside, tossed in Alaimagal’s secret red masala — the OG of all sides.',
+        image: '/side_chicken_65.png',
+    },
+    {
+        id: 2,
+        name: 'Signature Lemon Chicken',
+        description: 'Zesty, tangy, and hot — this lemon-kissed chicken brings a refreshing punch to your spice ride.',
+        image: '/side_lemon_chicken.png'
+    },
+    {
+        id: 3,
+        name: 'Signature Kholikondattam',
+        description: 'A rustic village-style dry chicken fry — smoky, bold, and rooted in Tamil tradition. One bite, you’re hooked.',
+        image: '/side_kholikondattam.png',
+    },
+    {
+        id: 4,
+        name: 'Signature Pallipalayam',
+        description: 'A fiery Coimbatore classic made with dry red chilies, curry leaves, and no tomatoes — pure, punchy and proud.',
+        image: '/side_pallipalayam.png',
+    },
+    {
+        id: 5,
+        name: 'Signature Uppu Kari',
+        description: 'Salt, spice, and slow-fried mutton — this Chettinad treasure is dry, intense, and impossible to resist.',
+        image: '/side_uppu_kari.png',
+    },
+    {
+        id: 6,
+        name: 'Signature Green 65',
+        description: 'A vibrant twist on the classic — mint, coriander, and green chili come together in a herb-loaded blast of flavor.',
+        image: '/side_green_65.png',
+    },
+    {
+        id: 7,
+        name: 'Signature Varutha Kari',
+        description: 'Dry-fried mutton with roasted masalas, layered with deep South Indian soul. Bold, beefy, and beautiful.',
+        image: '/side_varutha_kari.png',
+    }
+];
+
   return (
     <div className=''>
         <div className='px-24 flex justify-between items-center'>

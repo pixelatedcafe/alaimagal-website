@@ -3,6 +3,7 @@ import HeroSection from '../_components/HeroSection'
 import SignatureCreations from '../_components/SignatureCreations'
 import About from '../_components/About'
 import Gallery from '../_components/Gallery'
+import Clients from '../_components/Clients'
 
 const page = () => {
   return (
@@ -11,6 +12,8 @@ const page = () => {
       <SignatureCreations />
       <About />
       <Gallery />
+      <Clients />
+      
     </div>
   )
 }
