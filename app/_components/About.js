@@ -1,11 +1,12 @@
 import React from 'react'
+import { sansita } from '../layout';
 
 const About = () => {
   return (
     <div className="bg-[url('/hero-bg-1.png')]  w-full h-screen bg-cover bg-center">
         <div className='py-7 mx-36 flex flex-col justify-center'>
-            <h1 className='text-white font-extrabold text-4xl'>About Alaimagal Hotels</h1>
-            <div className=' mt-4  p-5 bg-white/30 flex w-full  rounded-4xl'>
+            <h1 className={`${sansita.className} text-white font-extrabold text-4xl`}>About Alaimagal Hotels</h1>
+            <div className=' mt-4  p-5 bg-white/20 flex w-full  rounded-4xl'>
                 <div className='w-7/12 px-15  text-white'>
                     <h3 className='text-3xl text-center font-extrabold'>Welcome to Alaimagal Hotels</h3>
                     <h6 className='text-xl text-center font-semibold'>A Taste of Tradition</h6>

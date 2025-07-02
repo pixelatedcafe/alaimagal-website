@@ -54,43 +54,43 @@ const SignatureCreations = () => {
             id: 1,
             name: 'Signature Full Meals',
             description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/main_full_meals.png',
+            image: '/side_chicken_65.png',
         },
         {
             id: 2,
             name: 'Signature Chicken Biryani',
             description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/main_chicken_briyani.png',
+            image: '/side_lemon_chicken.png'
         },
         {
             id: 1,
             name: 'Signature Chicken Fried Rice',
             description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/main_chicken_fried_rice.png',
+            image: '/side_kholikondattam.png',
         },
         {
             id: 1,
             name: 'Signature Chicken Kothu',
             description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/main_chicken_kothu.png',
+            image: '/side_pallipalayam.png',
         },
         {
             id: 1,
             name: 'Signature Chicken Laba',
             description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/main_chicken_laba.png',
+            image: '/side_uppu_kari.png',
         },
         {
             id: 1,
             name: 'Signature Kari Dosa',
             description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/main_kari_dosa.png.png',
+            image: '/side_green_65.png',
         },
         {
             id: 1,
             name: 'Signature Szechuan Fried Rice',
             description: 'Alaimagal’s signature chicken biryani, a fragrant blend of basmati rice, tender chicken, and aromatic spices, served with a side of raita.',
-            image: '/main_szechuan_fried_rice.png',
+            image: '/side_varutha_kari.png',
         }
     ]
   return (
