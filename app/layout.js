@@ -3,6 +3,7 @@ import { Sansita_Swashed } from 'next/font/google';
 import "./globals.css";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
+import Navbartmp from "./_components/Navbartmp";
 
 
 
@@ -33,7 +34,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${sansita.variable} antialiased`}
       >
-        {/* <Navbar /> */}
+        <Navbar />
+        {/* <Navbartmp /> */}
         {children}
         <Footer />
       </body>

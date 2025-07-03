@@ -46,9 +46,8 @@ Near Canara Bank ATM, <br/>Ram Nagar, Coimbatore - 641009</p>
             width="400" 
             height="300" 
             style={{ border: "0" }}
-            allowfullscreen="" 
             loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
+          >
           </iframe>
         </div>
       </div>
