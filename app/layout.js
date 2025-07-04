@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
 import Navbartmp from "./_components/Navbartmp";
+import MobileNav from "./_components/MobileNav";
 
 
 
