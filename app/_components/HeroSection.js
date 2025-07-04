@@ -63,8 +63,9 @@ const HeroSection = () => {
             </div>
 
 
-            <h4 className='text-white text-xl'>Rooted in heritage, perfected with passion 
-              Alaimagal serves hearty South Indian non-veg meals with a warm, premium touch.</h4>
+            <h4 className='text-white text-xl'>
+              Rooted in heritage, perfected with passion Alaimagal serves hearty South Indian non-veg meals with a warm, premium touch.
+            </h4>
 
             {/* Hero Buttons */}
             <div className='flex space-x-8 py-3'>
@@ -82,9 +83,9 @@ const HeroSection = () => {
                 Dine-In Available | Order Online on   
               </h1>
               <a href='https://www.zomato.com/coimbatore/alaimagal-hotels-2-gandhipuram/order' target='_blank' className='cusrsor-pointer'><img src='/zomatonew.png' alt='Zomato Logo' className='w-[100px]' /></a>
-            
             </div>
-          </div> 
+          </div>
+          
         </div>
 
       </div>

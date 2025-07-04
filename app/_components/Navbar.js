@@ -25,7 +25,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div>
+    <div className=''>
+      {/* Desktop Navbar */}
       <div className="hidden md:block">
         {/* Main Navbar Section */}
         <div className={`fixed w-full z-40 transition-opacity duration-300 ${scrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
@@ -129,19 +130,22 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="md:hidden flex justify-between  bg-none">
-        {/* Mobile Navbar Section */}
-        <div>
-          <div className="flex items-center ">
-              <img src="/logo-main.png" alt="Alaimagal Hotel Logo" className="w-44 bg-transparent" />
-            </div>
-        </div>
+      {/* Mobile Navbar Section */}
+      <div className="md:hidden w-full fixed z-40 bg-none ">
 
-        <div>
-           <div className='text-black'>
-                <HiMenuAlt3 />
+          <div className='flex items-center justify-between px-4 py-4 '>
+            
+            <div className="flex items-center ">
+                <img src="/logo-main.png" alt="Alaimagal Hotel Logo" className="w-44 bg-none" />
               </div>
+          
+
+          
+            <div className='text-white  text-4xl'>
+                  <HiMenuAlt3 />
+                </div>
         </div>
+        
         
       </div>
     </div>
