@@ -26,11 +26,18 @@ const HeroSection = () => {
               </div>
 
               {/* Zomato Section */}
-              <div className='flex items-center gap-2'>
+              <div className='flex flex-col items-start gap-2'>
                 <h1 className='text-white text-xl'>
-                  Dine-In Available | Order Online on   
+                  Dine-In Available | Party Orders Taken 
                 </h1>
-                <a href='https://www.zomato.com/coimbatore/alaimagal-hotels-2-gandhipuram/order' target='_blank' className='cusrsor-pointer'><img src='/zomatonew.png' alt='Zomato Logo' className='w-[100px]' /></a>
+                <div className='flex items-center gap-2 '> 
+                  <h1 className='text-white text-xl'>Order Online on</h1>
+                  <div className='flex items-center gap-2'>
+                    <a href='https://www.zomato.com/coimbatore/alaimagal-hotels-2-gandhipuram/order' target='_blank' className='cusrsor-pointer'><img src='/zomatonew.png' alt='Zomato Logo' className='w-[100px]' /></a>
+                    <a href='https://www.swiggy.com/restaurants/alaimagal-hotels-2-gandhipuram-coimbatore-102205' target='_blank' className='cusrsor-pointer'><img src='/swiggynew.png' alt='Swiggy Logo' className='w-[100px]' /></a>
+                  </div>
+                </div>
+                
               
               </div>
 
