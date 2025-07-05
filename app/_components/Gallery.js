@@ -20,7 +20,7 @@ const Gallery = () => {
   };
 
   return (
-    <div className="w-full min-h-screen py-12 px-4 md:px-8">
+    <div id='gallery' className="w-full min-h-screen py-12 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">

@@ -4,7 +4,7 @@ import { BiSolidFoodMenu } from "react-icons/bi";
 
 const HeroSection = () => {
   return (
-    <div className=''>
+    <div id='home' className=''>
       <div className='hidden md:block'>
         <div className='relative w-full flex'>
         <section className='w-3/4'>

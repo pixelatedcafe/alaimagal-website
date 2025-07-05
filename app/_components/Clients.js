@@ -127,28 +127,8 @@ const Clients = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-green-50 via-white to-green-100 font-sans overflow-hidden">
-      {/* Decorative Background Elements */}
-      {/* <div className="absolute inset-0 opacity-10"> */}
-        {/* Top Left Decorative Pattern */}
-        {/* <div className="absolute top-0 left-0 w-96 h-96 transform -translate-x-1/2 -translate-y-1/2">
-          <div className="w-full h-full border-4 border-green-300 rounded-full opacity-30"></div>
-          <div className="absolute top-8 left-8 w-80 h-80 border-2 border-green-400 rounded-full opacity-40"></div>
-          <div className="absolute top-16 left-16 w-64 h-64 border-2 border-green-500 rounded-full opacity-50"></div>
-        </div> */}
-        
-        {/* Top Right Decorative Pattern */}
-        {/* <div className="absolute top-0 right-0 w-96 h-96 transform translate-x-1/2 -translate-y-1/2">
-          <div className="w-full h-full border-4 border-green-300 rounded-full opacity-30"></div>
-          <div className="absolute top-8 right-8 w-80 h-80 border-2 border-green-400 rounded-full opacity-40"></div>
-          <div className="absolute top-16 right-16 w-64 h-64 border-2 border-green-500 rounded-full opacity-50"></div>
-        </div> */}
-
-        {/* Bottom Decorative Elements */}
-        {/* <div className="absolute bottom-0 left-1/4 w-32 h-32 border-2 border-green-400 rounded-full opacity-20"></div>
-        <div className="absolute bottom-20 right-1/4 w-24 h-24 border-2 border-green-500 rounded-full opacity-25"></div>
-        <div className="absolute bottom-40 left-1/3 w-16 h-16 border-2 border-green-600 rounded-full opacity-30"></div> */}
-      {/* </div> */}
+    <div id='review' className="relative min-h-screen bg-gradient-to-br from-green-50 via-white to-green-100 font-sans overflow-hidden">
+      
 
       {/* Main Content */}
       <div className="relative z-10 py-16 px-8">

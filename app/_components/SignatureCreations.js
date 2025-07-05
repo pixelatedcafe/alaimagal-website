@@ -95,7 +95,7 @@ const SignatureCreations = () => {
 ];
 
   return (
-    <div className=''>
+    <div id='menu' className=''>
         <div className='px-24 flex justify-between items-center'>
             <div>
                 <h1 className='text-[#03552A] font-extrabold text-[40px]'>Our Signature Creations</h1>

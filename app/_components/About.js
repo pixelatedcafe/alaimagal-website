@@ -3,7 +3,7 @@ import { sansita } from '../layout';
 
 const About = () => {
   return (
-    <div className="bg-[url('/hero-bg-1.png')] w-full bg-cover bg-center">
+    <div id='about' className="bg-[url('/hero-bg-1.png')] w-full bg-cover bg-center">
       <div className="py-7 mx-4 sm:mx-8 md:mx-36 flex flex-col justify-center">
         <h1 className={`${sansita.className} text-white font-extrabold text-2xl sm:text-3xl md:text-4xl text-center md:text-left`}>
           About Alaimagal Hotels

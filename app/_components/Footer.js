@@ -5,7 +5,7 @@ import { sansita } from '../layout';
 
 const Footer = () => {
   return (
-    <div className="relative bg-[url('/footer-bg-2.png')] bg-cover bg-center">
+    <div id='contact' className="relative bg-[url('/footer-bg-2.png')] bg-cover bg-center">
       <div className="flex flex-col md:flex-row w-full p-4 sm:p-5 h-auto md:h-86 items-center justify-between">
         <div className="w-full md:w-3/12 flex justify-center items-center">
           <img
