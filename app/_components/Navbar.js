@@ -204,12 +204,12 @@ const Navbar = () => {
       <div className={`md:hidden w-full fixed z-40 bg-none ${
           scrolled ? 'bg-white' : 'bg-transparent'
         }`}>
-        <div className="flex items-center justify-between px-4 py-4">
+        <div className={`flex items-center justify-between px-4 ${scrolled ? 'py-2': 'py-4'}`}>
           <div className="flex items-center">
             <img src="/logo-main.png" alt="Alaimagal Hotel Logo" className="w-44 bg-none" />
           </div>
 
-          {/* Hamburger Menu */}
+          {/* Hambuger Menu */}
           <div className={`${scrolled ? '': 'text-white' }  text-4xl`}>
             <button onClick={toggleMobileMenu}>
               {isMobileMenuOpen ? <HiX /> : <HiMenuAlt3 />}
@@ -219,7 +219,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Slider */}
         <div
-          className={`fixed top-0 right-0 h-full w-48 bg-white z-50 transform transition-transform duration-300 ${
+          className={`fixed top-0 right-0 h-screen w-48 bg-white z-50 transform transition-transform duration-300 ${
             isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           } `}
         >
@@ -231,7 +231,7 @@ const Navbar = () => {
             >
               Visit Us
             </button>
-             <div className=" pt-75  text-[12px] flex flex-col items-center justify-center ">
+             <div className=" pt-60  text-[11px] flex flex-col items-center justify-center ">
             <p>Alaimagal Hotels © 2025</p>
             <p className='text-center'>
               Plated Digitally by{' '} <br/>

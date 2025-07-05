@@ -54,16 +54,16 @@ const HeroSection = () => {
       </div>
       
       <div className='md:hidden'>
-        <div className='bg-[url("/hero-bg-1.png")] p-2 w-full h-screen bg-cover bg-center'>
+        <div className='bg-[url("/hero-bg-1.png")] px-4 p-2 w-full h-screen bg-cover bg-center'>
           <div className=''>
             {/* Hero Title */}
-            <h1 className='text-3xl pt-24 text-white font-extrabold '>Authentic Non-Veg Delights.<br/> A Taste of Tradition.</h1>
-            <div className=''>
+            <h1 className='text-3xl pt-20 text-white font-extrabold '>Authentic Non-Veg Delights.<br/> A Taste of Tradition.</h1>
+            <div className='py-5'>
               <img src='/hero-image-mobile.png' alt='' className='w-96' />
             </div>
 
 
-            <h4 className='text-white text-xl'>
+            <h4 className='text-white text-xl py-3'>
               Rooted in heritage, perfected with passion Alaimagal serves hearty South Indian non-veg meals with a warm, premium touch.
             </h4>
 
@@ -78,11 +78,19 @@ const HeroSection = () => {
             </div>
 
             {/* Zomato Section */}
-            <div className='flex items-center gap-2'>
+            <div className='flex flex-col py-5 items-start gap-1'>
               <h1 className='text-white text-lg'>
-                Dine-In Available | Order Online on   
+                Dine-In Available | Party Orders Taken
               </h1>
-              <a href='https://www.zomato.com/coimbatore/alaimagal-hotels-2-gandhipuram/order' target='_blank' className='cusrsor-pointer'><img src='/zomatonew.png' alt='Zomato Logo' className='w-[100px]' /></a>
+              <div className='flex items-center gap-2 py-2'>
+                 <h1 className='text-white'>Order Online On</h1>
+              <div className='flex items-center gap-2 py-2'>
+                <a href='https://www.zomato.com/coimbatore/alaimagal-hotels-2-gandhipuram/order' target='_blank' className='cusrsor-pointer'><img src='/zomatonew.png' alt='Zomato Logo' className='w-[100px]' /></a>
+              <a href='https://www.swiggy.com/restaurants/alaimagal-hotels-2-gandhipuram-coimbatore-102205' target='_blank' className='cusrsor-pointer'><img src='/swiggynew.png' alt='Swiggy Logo' className='w-[100px]' /></a>
+              </div>
+              </div>
+             
+              
             </div>
           </div>
           
