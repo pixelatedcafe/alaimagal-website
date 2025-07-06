@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Clients = () => {
   const reviews = [
@@ -87,7 +88,9 @@ const Clients = () => {
 
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
-  const reviewsPerPage = 6
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+  const reviewsPerPage = 8;
 
   // Auto-cycle through reviews every 10 seconds
   useEffect(() => {
@@ -111,14 +114,30 @@ const Clients = () => {
     setCurrentPage(newPage);
   };
 
-  // Check if current review is on current page
-  const isCurrentReviewOnPage = () => {
-    return currentReviewIndex >= startIndex && currentReviewIndex < endIndex;
+  // Swipe handling
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
   };
 
-  // Function to manually cycle through reviews
-  const nextReview = () => {
-    setCurrentReviewIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      handleSwipe(1);
+    }
+    if (isRightSwipe) {
+      handleSwipe(-1);
+    }
   };
 
   // Function to render stars based on rating
@@ -126,103 +145,136 @@ const Clients = () => {
     return '★'.repeat(rating) + '☆'.repeat(5 - rating);
   };
 
-  return (
-    <div id='review' className="relative min-h-screen bg-gradient-to-br from-green-50 via-white to-green-100 font-sans overflow-hidden">
-      
+  // Animation variants for the featured card
+  const cardVariants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 300 : -300,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction) => ({
+      x: direction < 0 ? 300 : -300,
+      opacity: 0,
+    }),
+  };
 
+  // Custom direction for animation based on swipe
+  const [swipeDirection, setSwipeDirection] = useState(0);
+
+  const handleSwipe = (direction) => {
+    setSwipeDirection(direction);
+    setCurrentReviewIndex((prevIndex) => {
+      if (direction > 0) {
+        return (prevIndex + 1) % reviews.length;
+      } else {
+        return (prevIndex - 1 + reviews.length) % reviews.length;
+      }
+    });
+  };
+
+  return (
+    <div id='review' className="relative bg-gradient-to-br from-green-50 via-white to-green-100 font-sans overflow-hidden">
       {/* Main Content */}
-      <div className="relative z-10 py-16 px-8">
+      <div className="relative z-10 px-4 sm:px-6 md:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-green-800 mb-4 tracking-wide">
+        <div className="text-center mb-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-800 tracking-wide">
             Client Reviews
           </h1>
-          <div className="w-32 h-1 bg-gradient-to-r from-green-400 to-green-600 mx-auto rounded-full"></div>
+          <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-green-400 to-green-600 mx-auto rounded-full"></div>
         </div>
 
         {/* Main Review Section */}
-        <div className="max-w-7xl mx-auto ">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-            
+        <div className="max-w-6xl py-10 mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6 items-stretch">
             {/* Featured Review Card */}
-            <div className="lg:col-span-2">
-              <div
-                className="relative bg-gradient-to-br from-green-700 to-green-800 text-white p-8 rounded-3xl shadow-2xl cursor-pointer hover:scale-105 transition-all duration-300 hover:shadow-green-300/50"
-                onClick={nextReview}
-              >
-                {/* Decorative Quote Mark */}
-                <div className="absolute top-4 left-4 text-6xl text-green-300 opacity-50 font-serif">"</div>
-                
-                {/* Progress Bar */}
-                {/* <div className="absolute top-0 left-0 w-full h-2 bg-green-600 rounded-t-3xl">
-                  <div 
-                    className="h-full bg-gradient-to-r from-yellow-400 to-yellow-300 rounded-t-3xl transition-all duration-300"
-                    style={{ width: `${((currentReviewIndex + 1) / reviews.length) * 100}%` }}
-                  ></div>
-                </div> */}
+            <div className="lg:col-span-3 relative">
+              <div className="relative w-full h-[250px] overflow-hidden">
+                <AnimatePresence initial={false} custom={swipeDirection}>
+                  <motion.div
+                    key={currentReviewIndex}
+                    custom={swipeDirection}
+                    variants={cardVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{ duration: 0.5, ease: 'easeInOut' }}
+                    className="absolute w-full bg-gradient-to-br from-green-700 to-green-800 text-white p-6 sm:p-8 rounded-3xl shadow-2xl cursor-pointer h-full flex flex-col justify-between"
+                    onTouchStart={onTouchStart}
+                    onTouchMove={onTouchMove}
+                    onTouchEnd={onTouchEnd}
+                  >
+                    {/* Decorative Quote Mark */}
+                    <div className="absolute top-4 left-4 text-4xl sm:text-6xl text-green-300 opacity-50 font-serif">"</div>
 
-                <div className="relative z-10 pt-8">
-                  <div className="flex items-center justify-between mb-6">
-                    <div>
-                      <h3 className="text-3xl font-bold text-green-100 mb-2">
-                        {reviews[currentReviewIndex].name}
-                      </h3>
-                      <div className="text-3xl text-yellow-300 mb-4">
-                        {renderStars(reviews[currentReviewIndex].rating)}
+                    <div className="relative z-10 pt-6 sm:pt-8 flex flex-col justify-between h-full">
+                      <div>
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-green-100 mb-2">
+                              {reviews[currentReviewIndex].name}
+                            </h3>
+                            <div className="text-xl sm:text-2xl text-yellow-300 mb-4">
+                              {renderStars(reviews[currentReviewIndex].rating)}
+                            </div>
+                          </div>
+                        </div>
+                        <p className="text-sm sm:text-base md:text-lg leading-relaxed text-green-50 italic line-clamp-4">
+                          {reviews[currentReviewIndex].review}
+                        </p>
                       </div>
                     </div>
-                    <div className="text-sm text-green-200 bg-green-600 px-4 py-2 rounded-full">
-                      {currentReviewIndex + 1} of {reviews.length}
-                    </div>
-                  </div>
-                  
-                  <p className="text-lg leading-relaxed text-green-50 italic">
-                    {reviews[currentReviewIndex].review}
-                  </p>
-                </div>
 
-                {/* Decorative Elements */}
-                <div className="absolute bottom-4 right-4 w-16 h-16 border-2 border-green-400 rounded-full opacity-20"></div>
-                <div className="absolute bottom-8 right-8 w-8 h-8 border-2 border-green-300 rounded-full opacity-30"></div>
+                    {/* Decorative Elements */}
+                    <div className="absolute bottom-4 right-4 w-12 sm:w-16 h-12 sm:h-16 border-2 border-green-400 rounded-full opacity-20"></div>
+                    <div className="absolute bottom-6 sm:bottom-8 right-6 sm:right-8 w-6 sm:w-8 h-6 sm:h-8 border-2 border-green-300 rounded-full opacity-30"></div>
+                  </motion.div>
+                </AnimatePresence>
               </div>
             </div>
 
-            {/* Review Grid */}
-            <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-green-800 text-center mb-6">
-                All Reviews
-              </h2>
-              
-              <div className="grid grid-cols-3 gap-3">
+            {/* Review Grid and Pagination (Hidden on Mobile) */}
+            <div className="lg:col-span-2 flex-col gap-4 sm:gap-6 hidden lg:flex">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
                 {currentPageReviews.map((review, pageIndex) => {
                   const globalIndex = startIndex + pageIndex;
+                  const firstName = review.name.split(' ')[0];
                   return (
                     <div
                       key={globalIndex}
                       className={`aspect-square p-3 rounded-xl text-center cursor-pointer transition-all duration-300 hover:scale-105 flex flex-col justify-center ${
-                        globalIndex === currentReviewIndex 
-                          ? 'bg-gradient-to-br from-green-400 to-green-500 text-white shadow-lg shadow-green-300/50 transform scale-105' 
+                        globalIndex === currentReviewIndex
+                          ? 'bg-gradient-to-br from-green-400 to-green-500 text-white shadow-lg shadow-green-300/50'
                           : 'bg-white hover:bg-green-50 shadow-md hover:shadow-lg'
                       }`}
                       onClick={() => handleReviewSelect(globalIndex)}
                     >
-                      <div className="flex flex-col items-center justify-center space-y-2">
-                        <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${
-                          globalIndex === currentReviewIndex 
-                            ? 'bg-white text-green-600' 
-                            : 'bg-green-100 text-green-700'
-                        }`}>
-                          {review.name.charAt(0)}
+                      <div className="flex flex-col items-center justify-center space-y-1 sm:space-y-2">
+                        <div
+                          className={`w-6 sm:w-8 h-6 sm:h-8 rounded-full flex items-center justify-center text-xs font-bold ${
+                            globalIndex === currentReviewIndex
+                              ? 'bg-white text-green-600'
+                              : 'bg-green-100 text-green-700'
+                          }`}
+                        >
+                          {firstName.charAt(0)}
                         </div>
                         <div>
-                          <h3 className={`text-xs font-semibold truncate max-w-full ${
-                            globalIndex === currentReviewIndex ? 'text-white' : 'text-green-800'
-                          }`}>
-                            {review.name}
+                          <h3
+                            className={`text-xs sm:text-sm font-semibold truncate max-w-full ${
+                              globalIndex === currentReviewIndex ? 'text-white' : 'text-green-800'
+                            }`}
+                          >
+                            {firstName}
                           </h3>
-                          <div className={`text-xs ${
-                            globalIndex === currentReviewIndex ? 'text-yellow-200' : 'text-yellow-500'
-                          }`}>
+                          <div
+                            className={`text-xs sm:text-sm ${
+                              globalIndex === currentReviewIndex ? 'text-yellow-200' : 'text-yellow-500'
+                            }`}
+                          >
                             {renderStars(review.rating)}
                           </div>
                         </div>
@@ -234,77 +286,54 @@ const Clients = () => {
 
               {/* Pagination Controls */}
               {totalPages > 1 && (
-                <div className="flex justify-center items-center space-x-2 mt-4">
+                <div className="flex justify-center items-center space-x-2">
                   <button
                     onClick={() => setCurrentPage(Math.max(0, currentPage - 1))}
                     disabled={currentPage === 0}
                     className={`p-2 rounded-full transition-colors ${
-                      currentPage === 0 
-                        ? 'bg-gray-200 text-gray-400 cursor-not-allowed' 
+                      currentPage === 0
+                        ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
                         : 'bg-green-500 text-white hover:bg-green-600'
                     }`}
                   >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3 sm:w-4 h-3 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                     </svg>
                   </button>
-                  
+
                   {Array.from({ length: totalPages }, (_, i) => (
                     <button
                       key={i}
                       onClick={() => setCurrentPage(i)}
-                      className={`w-8 h-8 rounded-full text-sm font-semibold transition-colors ${
-                        currentPage === i 
-                          ? 'bg-green-500 text-white' 
+                      className={`w-6 sm:w-8 h-6 sm:h-8 rounded-full text-xs sm:text-sm font-semibold transition-colors ${
+                        currentPage === i
+                          ? 'bg-green-500 text-white'
                           : 'bg-green-100 text-green-700 hover:bg-green-200'
                       }`}
                     >
                       {i + 1}
                     </button>
                   ))}
-                  
-                  <button
+
+                  < button
                     onClick={() => setCurrentPage(Math.min(totalPages - 1, currentPage + 1))}
                     disabled={currentPage === totalPages - 1}
                     className={`p-2 rounded-full transition-colors ${
-                      currentPage === totalPages - 1 
-                        ? 'bg-gray-200 text-gray-400 cursor-not-allowed' 
+                      currentPage === totalPages - 1
+                        ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
                         : 'bg-green-500 text-white hover:bg-green-600'
                     }`}
                   >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3 sm:w-4 h-3 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </button>
                 </div>
               )}
-
-              {/* Page Info */}
-              {totalPages > 1 && (
-                <div className="text-center text-xs text-green-600 bg-green-50 p-2 rounded-lg">
-                  Page {currentPage + 1} of {totalPages} • {reviews.length} total reviews
-                </div>
-              )}
-
-              {/* Auto-cycle indicator */}
-              {/* <div className="text-center text-sm text-green-600 bg-green-50 p-3 rounded-lg">
-                <span className="inline-block w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
-                Auto-cycling every 10 seconds
-              </div> */}
             </div>
           </div>
         </div>
       </div>
-
-      {/* Floating Action Button */}
-      {/* <div 
-        className="fixed bottom-8 right-8 bg-gradient-to-r from-green-500 to-green-600 text-white p-4 rounded-full shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300"
-        onClick={nextReview}
-      >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </div> */}
     </div>
   );
 };

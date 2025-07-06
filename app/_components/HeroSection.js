@@ -14,14 +14,14 @@ const HeroSection = () => {
               <h1 className='text-3xl lg:text-4xl xl:text-5xl pt-32 lg:pt-40 xl:pt-48 2xl:pt-[200px] text-white font-extrabold py-6 lg:py-8 xl:py-12 leading-tight'>
                 Authentic Non-Veg Delights.<br/> A Taste of Tradition.
               </h1>
-              <h4 className='text-white text-xl lg:text-2xl xl:text-3xl max-w-2xl lg:max-w-3xl xl:max-w-4xl leading-relaxed'>
+              <h4 className='text-white text-xl lg:text-2xl xl:text-2xl max-w-2xl lg:max-w-3xl xl:max-w-4xl leading-relaxed'>
                 Rooted in heritage, perfected with passion <br className='hidden xl:block'/> 
                 Alaimagal serves hearty South Indian non-veg <br className='hidden xl:block'/> 
                 meals with a warm, premium touch.
               </h4>
 
               {/* Hero Buttons */}
-              <div className='flex space-x-4 lg:space-x-6 xl:space-x-8 py-8 lg:py-10 xl:py-14'>
+              <div className='flex space-x-4 lg:space-x-6 xl:space-x-8 py-8 lg:py-10 xl:py-10'>
                 <button className='bg-white font-semibold text-lg lg:text-xl flex items-center gap-1 px-5 lg:px-6 xl:px-7 py-2 rounded-lg hover:bg-gray-100 transition-colors'>
                   View Menu <span className='text-2xl lg:text-3xl'><BiSolidFoodMenu /></span>
                 </button>
