@@ -32,13 +32,13 @@ const Footer = () => {
           </ul>
         </div> */}
 
-        <div className="h-auto md:h-80 w-full md:w-5/12 flex flex-col justify-center items-center mt-4 md:mt-0">
+        <div className="h-auto md:h-80 w-full md:w-5/12 flex flex-col justify-center items-center mt-4 md:mt-0 max-md:mb-3">
           <h1 className={`${sansita.className} text-xl sm:text-2xl md:text-3xl font-bold font-sansita text-center`}>
             Reach out to us
           </h1>
-          <div className=" flex pt-4 sm:pt-5 space-x-6 text-base sm:text-lg md:text-lg">
+          <div className=" max-md:flex-col flex pt-4 max-md:space-y-4 sm:pt-5 space-x-6 text-base sm:text-lg md:text-lg">
             <div className="flex items-justify-center items-start gap-2">
-              <div className="">
+             <div className="">
                 <p className="text-lg sm:text-xl md:text-xl text-center font-bold">
                   <TbPhoneCall />
                 </p>
