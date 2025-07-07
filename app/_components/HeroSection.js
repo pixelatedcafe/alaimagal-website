@@ -1,4 +1,4 @@
-'use client'
+
 import React from 'react'
 import { BiSolidFoodMenu } from "react-icons/bi";
 

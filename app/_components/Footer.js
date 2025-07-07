@@ -6,13 +6,14 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import { IoMail } from "react-icons/io5";
 import { RiInstagramFill } from "react-icons/ri";
 
+
 const Footer = () => {
   return (
     <div id='contact' className="relative bg-[url('/footer-bg-2.png')] bg-cover bg-center">
       <div className="flex flex-col md:flex-row w-full p-4 sm:p-5 h-auto md:h-56 items-center justify-between">
         <div className="w-full md:w-3/12 flex justify-center items-center">
           <img
-            src="/footer-bg-1.png"
+            src="/footer-logo.png"
             alt="Alaimagal Hotels Logo"
             className="w-64 sm:w-80 md:w-64 p-4 sm:p-6 md:p-10"
           />

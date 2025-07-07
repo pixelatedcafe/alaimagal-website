@@ -1,10 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { Sansita_Swashed } from 'next/font/google';
 import "./globals.css";
-import Navbar from "./_components/Navbar";
-import Footer from "./_components/Footer";
-import Navbartmp from "./_components/Navbartmp";
-import MobileNav from "./_components/MobileNav";
 
 
 
@@ -24,21 +20,20 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
+const metadata = {
   title: "Alaimagal Hotel" ,
   description: "Alaimagal Hotel - Your Gateway to Comfort and Luxury",
 };
 
-export default function RootLayout({ children }) {
+export default function Layout({ children }) {
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${sansita.variable} antialiased`}
       >
-        <Navbar />
-        {/* <Navbartmp /> */}
+        {/* <Navbar /> */}
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
