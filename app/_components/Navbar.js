@@ -83,19 +83,22 @@ const Navbar = () => {
 
   // Common nav links JSX for desktop (main navbar)
   const navLinks = (
-    <ul className="flex pl-24 font-semibold space-x-20 text-white text-xl">
+    <ul className="flex pl-6 sm:pl-8 md:pl-12 lg:pl-16 xl:pl-20 2xl:pl-24 3xl:pl-28 font-semibold 
+                   space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-12 xl:space-x-16 2xl:space-x-20 3xl:space-x-24 
+                   text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-xl 3xl:text-2xl">
       {['home', 'menu', 'about', 'gallery', 'review', 'contact'].map((section) => (
         <li key={section} className="relative group">
           <a
-            className={`${
-              activeSection === section ? 'font-extrabold text-2xl' : ''
-            } hover:font-extrabold hover:text-2xl`}
+            className={`${ 
+              activeSection === section ? '' : ''
+            } 
+            transition-all duration-200`}
             href={`#${section}`}
           >
             {section.charAt(0).toUpperCase() + section.slice(1)}
           </a>
           <span
-            className={`absolute left-0 bottom-0 h-[4px] bg-white transition-all duration-300 ${
+            className={`absolute left-0 bottom-0 h-[2px] sm:h-[3px] md:h-[4px] bg-white transition-all duration-300 ${
               activeSection === section ? 'w-full' : 'w-0 group-hover:w-full'
             }`}
           ></span>
@@ -106,17 +109,18 @@ const Navbar = () => {
 
   // Common nav links for desktop (scrolled navbar)
   const scrolledNavLinks = (
-    <ul className="flex font-semibold space-x-16 text-xl">
+    <ul className="flex font-semibold space-x-3 sm:space-x-4 md:space-x-6 lg:space-x-8 xl:space-x-12 2xl:space-x-16 3xl:space-x-20 
+                   text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-xl 3xl:text-2xl">
       {['home', 'menu', 'about', 'gallery', 'review', 'contact'].map((section) => (
         <li key={section} className="relative group">
           <a
-            className={`${activeSection === section ? 'font-extrabold' : ''} hover:font-extrabold`}
+            className={`${activeSection === section ? 'f' : ''} transition-all duration-200`}
             href={`#${section}`}
           >
             {section.charAt(0).toUpperCase() + section.slice(1)}
           </a>
           <span
-            className={`absolute left-0 bottom-0 h-[4px] bg-[#03552A] transition-all duration-300 ${
+            className={`absolute left-0 bottom-0 h-[2px] sm:h-[3px] md:h-[4px] bg-[#03552A] transition-all duration-300 ${
               activeSection === section ? 'w-full' : 'w-0 group-hover:w-full'
             }`}
           ></span>
@@ -125,7 +129,7 @@ const Navbar = () => {
     </ul>
   );
 
-  // Mobile nav links
+  // Mobile nav links (unchanged)
   const mobileNavLinks = (
     <ul className="flex flex-col space-y-6 text-xl font-semibold">
       {['home', 'menu', 'about', 'gallery', 'review', 'contact'].map((section) => (
@@ -162,12 +166,18 @@ const Navbar = () => {
           <section className="w-full flex">
             {/* Logo */}
             <div className="w-3/4 flex justify-center items-center">
-              <img src="/logo-main.png" alt="Alaimagal Hotel Logo" className="w-[350px] py-8" />
+              <img src="/logo-main.png" alt="Alaimagal Hotel Logo" 
+                   className="w-[200px] sm:w-[250px] md:w-[280px] lg:w-[320px] xl:w-[350px] 2xl:w-[350px] 3xl:w-[420px] 
+                            py-4 sm:py-5 md:py-6 lg:py-7 xl:py-8 2xl:py-8 3xl:py-10" />
             </div>
 
             {/* Visit Us */}
-            <div className="w-1/4 flex justify-center items-start py-8">
-              <button className="bg-[#03552A] text-white px-8 py-2 rounded-md transition duration-300">
+            <div className="w-1/4 flex justify-center items-start py-4 sm:py-5 md:py-6 lg:py-7 xl:py-8 2xl:py-8 3xl:py-10">
+              <button className="bg-[#03552A] text-white 
+                               px-3 sm:px-4 md:px-5 lg:px-6 xl:px-7 2xl:px-8 3xl:px-10 
+                               py-1.5 sm:py-2 md:py-2 lg:py-2 xl:py- 2xl:py-2 3xl:py-4 
+                               text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg 2xl:text-lg 3xl:text-xl 
+                               rounded-md transition duration-300 hover:bg-[#024a24]">
                 Visit Us
               </button>
             </div>
@@ -181,26 +191,34 @@ const Navbar = () => {
 
         {/* After Scroll Navbar Section */}
         <div
-          className={`bg-white px-24 py-1 flex justify-between items-center fixed w-full z-40 transition-opacity duration-300 ${
+          className={`bg-white px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 3xl:px-24 
+                     py-1 sm:py-1.5 md:py-2 lg:py-2 xl:py-2 2xl:py-2 3xl:py-3 
+                     flex justify-between items-center fixed w-full z-40 transition-opacity duration-300 ${
             scrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
         >
           <div>
-            <img src="/logo-nav-1.png" alt="Alaimagal Hotel Logo" className="w-20" />
+            <img src="/logo-nav-1.png" alt="Alaimagal Hotel Logo" 
+                 className="w-12 sm:w-14 md:w-16 lg:w-18 xl:w-20 2xl:w-20 3xl:w-24" />
           </div>
-          <div className="flex gap-16 items-center">
+          <div className="flex gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-14 3xl:gap-16 items-center">
             <nav>{scrolledNavLinks}</nav>
-            <button className="bg-[#03552A] text-white px-8 py-2 rounded-md transition duration-300">
+            <button className="bg-[#03552A] text-white 
+                             px-3 sm:px-4 md:px-5 lg:px-6 xl:px-7 2xl:px-8 3xl:px-10 
+                             py-1.5 sm:py-2 md:py-2.5 lg:py-3 xl:py-3 2xl:py-2 3xl:py-4 
+                             text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg 2xl:text-lg 3xl:text-xl 
+                             rounded-md transition duration-300 hover:bg-[#024a24]">
               Visit Us
             </button>
           </div>
           <div>
-            <img src="/logo-nav-2.png" alt="Alaimagal Hotel Logo" className="w-52" />
+            <img src="/logo-nav-2.png" alt="Alaimagal Hotel Logo" 
+                 className="w-32 sm:w-36 md:w-40 lg:w-44 xl:w-48 2xl:w-48 3xl:w-56" />
           </div>
         </div>
       </div>
 
-      {/* Mobile Navbar Section */}
+      {/* Mobile Navbar Section - Unchanged */}
       <div className={`md:hidden w-full fixed z-40 bg-none ${
           scrolled ? 'bg-white' : 'bg-transparent'
         }`}>

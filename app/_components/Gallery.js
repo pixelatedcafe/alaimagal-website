@@ -81,7 +81,7 @@ const Gallery = () => {
   return (
     <div id='gallery' className="">
       {/* Desktop Gallery Container */}
-      <div className='hidden md:block w-full min-h-screen py-12 px-4 md:px-8'>
+      <div className='hidden md:block w-full max-md:min-h-screen py-12 px-4 md:px-8'>
           <div className="max-w-7xl mx-auto">
           {/* Header Section */}
           <div className="text-center mb-12">
@@ -209,95 +209,99 @@ const Gallery = () => {
       </div>
 
       {/* Mobile Gallery Section with Carousel */}
-      <div className='md:hidden px-4 py-8'>
-        <div className="text-center mb-8">
-          <h1 className="font-extrabold text-4xl">
-            Alaimagal Hotels Culinary Gallery
-          </h1>
-          <p className="mt-4 text-base text-gray-600 font-light italic">
-            Savor the flavors of our exquisite dishes, crafted with love and tradition
-          </p>
-          <div className="mt-6 w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto rounded-full"></div>
-        </div>
+       {/* Mobile Gallery Section with Carousel */}
+<div className='md:hidden w-full py-8'>
+  <div className="text-center mb-8 px-4">
+    <h1 className="font-extrabold text-2xl sm:text-3xl leading-tight text-gray-800">
+      Alaimagal Hotels Culinary Gallery
+    </h1>
+    <p className="mt-4 text-sm sm:text-base text-gray-600 font-light italic px-2">
+      Savor the flavors of our exquisite dishes, crafted with love and tradition
+    </p>
+    <div className="mt-6 w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto rounded-full"></div>
+  </div>
 
-        {/* Mobile Carousel Container */}
-        <div className="relative">
-          {/* Carousel Wrapper */}
-          <div 
-            className="relative overflow-hidden rounded-2xl shadow-2xl bg-gradient-to-br from-emerald-800 to-emerald-900"
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
-            {/* Carousel Track */}
-            <div 
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+  {/* Mobile Carousel Container */}
+  <div className="relative px-8">
+    {/* Carousel Wrapper with Peek View */}
+    <div 
+      className="relative overflow-visible pt-4"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
+      {/* Carousel Track */}
+      <div className="relative flex items-center justify-center h-[600px]">
+        {mobileGalleryItems.map((item, index) => {
+          const isActive = index === currentSlide;
+          const isPrev = index === (currentSlide - 1 + mobileGalleryItems.length) % mobileGalleryItems.length;
+          const isNext = index === (currentSlide + 1) % mobileGalleryItems.length;
+          const isVisible = isActive || isPrev || isNext;
+
+          if (!isVisible) return null;
+
+          return (
+            <div
+              key={item.id}
+              className={`absolute transition-all duration-500 ease-in-out ${
+                isActive
+                  ? 'z-30 scale-100 opacity-100 transform translate-x-0'
+                  : isPrev
+                  ? 'z-20 scale-90 opacity-60 transform -translate-x-16'
+                  : isNext
+                  ? 'z-20 scale-90 opacity-60 transform translate-x-16'
+                  : 'z-10 scale-75 opacity-30'
+              }`}
+              style={{
+                width: isActive ? '100%' : '85%',
+              }}
             >
-              {mobileGalleryItems.map((item, index) => (
-                <div key={item.id} className="w-full flex-shrink-0 relative">
-                  <img 
-                    src={item.src} 
-                    alt={item.alt} 
-                    className="w-full h-auto object-cover"
-                  />
-                  {/* Slide overlay with title */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-emerald-800 to-emerald-900">
+                <img 
+                  src={item.src} 
+                  alt={item.alt} 
+                  className="w-full h-auto object-cover"
+                />
+                {/* Slide overlay with title - only show on active slide */}
+                {isActive && (
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-4">
                     <h3 className="text-white text-lg font-bold mb-1">{item.alt}</h3>
                     <div className="w-12 h-0.5 bg-amber-400"></div>
                   </div>
-                </div>
-              ))}
+                )}
+              </div>
             </div>
-
-            {/* Navigation Arrows */}
-            <button 
-              onClick={prevSlide}
-              className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            
-            <button 
-              onClick={nextSlide}
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-
-            {/* Slide counter */}
-            <div className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm backdrop-blur-sm">
-              {currentSlide + 1} / {mobileGalleryItems.length}
-            </div>
-          </div>
-
-          {/* Dot Indicators */}
-          <div className="flex justify-center space-x-2 mt-6">
-            {mobileGalleryItems.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentSlide
-                    ? 'bg-amber-400 scale-125 shadow-lg'
-                    : 'bg-gray-300 hover:bg-gray-400'
-                }`}
-              />
-            ))}
-          </div>
-
-          {/* Swipe Instruction */}
-          <div className="text-center mt-4">
-            <p className="text-sm text-gray-500 italic">
-              ← Swipe to explore more dishes →
-            </p>
-          </div>
-        </div>
+          );
+        })}
       </div>
+
+      {/* Invisible touch area for better swipe detection */}
+      <div className="absolute top-0 left-0 h-80 w-full"></div>
+    </div>
+
+    {/* Dot Indicators */}
+    <div className="flex justify-center space-x-2 mt-6">
+      {mobileGalleryItems.map((_, index) => (
+        <button
+          key={index}
+          onClick={() => goToSlide(index)}
+          className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            index === currentSlide
+              ? 'bg-amber-400 scale-125 shadow-lg'
+              : 'bg-gray-300 hover:bg-gray-400'
+          }`}
+        />
+      ))}
+    </div>
+
+    {/* Swipe Instruction */}
+    <div className="text-center mt-4">
+      <p className="text-sm text-gray-500 italic">
+        ← Swipe to explore more dishes →
+      </p>
+    </div>
+  </div>
+</div>
     </div>
   );
 };
