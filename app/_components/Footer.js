@@ -93,7 +93,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="h-16 flex flex-col items-center justify-center space-y-1">
+      <div className="md:hidden h-16 flex flex-col items-center justify-center space-y-1">
         <p>© 2025 Alaimagal Hotels. All rights reserved.</p>
         <p>
           Plated Digitally by{' '}
@@ -106,6 +106,18 @@ const Footer = () => {
             The Pixelated Café
           </a>
         </p>
+      </div>
+
+      <div className="hidden md:flex h-16 flex-col items-center justify-center space-y-1">
+        <p>© 2025 Alaimagal Hotels. All rights reserved | Plated Digitally by{' '}
+          <a
+            className="font-semibold"
+            target="_blank"
+            href="https://www.thepixelatedcafe.com"
+            rel="noopener noreferrer"
+          >
+            The Pixelated Café
+          </a></p>
       </div>
 
       {/* Decorative Images */}

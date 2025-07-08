@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
 
@@ -173,13 +174,15 @@ const Navbar = () => {
 
             {/* Visit Us */}
             <div className="w-1/4 flex justify-center items-start py-4 sm:py-5 md:py-6 lg:py-7 xl:py-8 2xl:py-8 3xl:py-10">
+            <Link href="https://maps.app.goo.gl/u6wbCTTGXtmzhWBz8" target="_blank" className="">
               <button className="bg-[#03552A] text-white 
                                px-3 sm:px-4 md:px-5 lg:px-6 xl:px-7 2xl:px-8 3xl:px-10 
                                py-1.5 sm:py-2 md:py-2 lg:py-2 xl:py- 2xl:py-2 3xl:py-4 
                                text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg 2xl:text-lg 3xl:text-xl 
-                               rounded-md transition duration-300 hover:bg-[#024a24]">
+                               rounded-md transition duration-300 hover:bg-[#024a24] cursor-pointer">
                 Visit Us
               </button>
+              </Link>
             </div>
           </section>
 
@@ -192,7 +195,7 @@ const Navbar = () => {
         {/* After Scroll Navbar Section */}
         <div
           className={`bg-white px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 3xl:px-24 
-                     py-1 sm:py-1.5 md:py-2 lg:py-2 xl:py-2 2xl:py-2 3xl:py-3 
+                     py-1 sm:py-1.5 md:py-2 lg:py-2 xl:py-2 2xl:py-2 3xl:py-3  shadow-md
                      flex justify-between items-center fixed w-full z-40 transition-opacity duration-300 ${
             scrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
@@ -203,13 +206,15 @@ const Navbar = () => {
           </div>
           <div className="flex gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-14 3xl:gap-16 items-center">
             <nav>{scrolledNavLinks}</nav>
-            <button className="bg-[#03552A] text-white 
-                             px-3 sm:px-4 md:px-5 lg:px-6 xl:px-7 2xl:px-8 3xl:px-10 
-                             py-1.5 sm:py-2 md:py-2.5 lg:py-3 xl:py-3 2xl:py-2 3xl:py-4 
-                             text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg 2xl:text-lg 3xl:text-xl 
-                             rounded-md transition duration-300 hover:bg-[#024a24]">
-              Visit Us
-            </button>
+              <Link href="https://maps.app.goo.gl/u6wbCTTGXtmzhWBz8" target="_blank" className="">
+              <button className="bg-[#03552A] text-white 
+                              px-3 sm:px-4 md:px-5 lg:px-6 xl:px-7 2xl:px-8 3xl:px-10 
+                              py-1.5 sm:py-2 md:py-2.5 lg:py-3 xl:py-3 2xl:py-2 3xl:py-4 
+                              text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg 2xl:text-lg 3xl:text-xl 
+                              rounded-md transition duration-300 hover:bg-[#024a24] cursor-pointer">
+                Visit Us
+              </button>
+            </Link>
           </div>
           <div>
             <img src="/logo-nav-2.png" alt="Alaimagal Hotel Logo" 
@@ -229,8 +234,8 @@ const Navbar = () => {
 
           {/* Hambuger Menu */}
           <div className={`${scrolled ? '': 'text-white' }  text-4xl`}>
-            <button onClick={toggleMobileMenu}>
-              {isMobileMenuOpen ? <HiX /> : <HiMenuAlt3 />}
+            <button onClick={toggleMobileMenu} className=''>
+              {isMobileMenuOpen ? <HiX className='z-80' /> : <HiMenuAlt3 />}
             </button>
           </div>
         </div>
@@ -243,12 +248,14 @@ const Navbar = () => {
         >
           <div className="flex flex-col p-6 pt-20 h-full">
             {mobileNavLinks}
+            <Link href="https://maps.app.goo.gl/u6wbCTTGXtmzhWBz8" target="_blank" className="">
             <button
               className="mt-8 bg-[#03552A] text-white px-6 py-2 rounded-md font-semibold text-lg transition duration-300"
               onClick={handleLinkClick}
             >
               Visit Us
             </button>
+            </Link>
              <div className=" pt-60  text-[11px] flex flex-col items-center justify-center ">
             <p>Alaimagal Hotels © 2025</p>
             <p className='text-center'>
