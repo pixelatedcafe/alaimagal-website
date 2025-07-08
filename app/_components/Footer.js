@@ -33,7 +33,7 @@ const Footer = () => {
           </ul>
         </div> */}
 
-        <div className="h-auto md:h-80 w-full md:w-5/12 flex flex-col justify-center items-center mt-4 md:mt-0 max-md:mb-3">
+        <div className="h-auto md:h-80 w-full md:w-6/12 flex flex-col justify-center items-center mt-4 md:mt-0 max-md:mb-3">
           <h1 className={`${sansita.className} text-xl sm:text-2xl md:text-3xl font-bold font-sansita text-center`}>
             Reach out to us
           </h1>
@@ -82,7 +82,7 @@ const Footer = () => {
           </div>
         </div>
 
-         <div className="w-full md:w-4/12 flex justify-center items-center">
+         <div className="w-full md:w-3/12 flex justify-center items-center">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125323.35940109537!2d76.80913209915161!3d11.011970544709065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859ff1c9044bf%3A0xb44a567e14719a5d!2zQWxhaW1hZ2FsIEhvdGVscyDgroXgrrLgr4jgrq7grpXgrrPgr40g4K6J4K6j4K614K6V4K6u4K-N!5e0!3m2!1sen!2sin!4v1751301861729!5m2!1sen!2sin"
             className="w-full max-w-[300px] h-[150px] sm:max-w-[350px] sm:h-[200px] md:max-w-[400px] md:h-[200px]"
@@ -93,7 +93,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="md:hidden h-16 flex flex-col items-center justify-center space-y-1">
+      <div className=" h-16 flex flex-col items-center justify-center space-y-1">
         <p>© 2025 Alaimagal Hotels. All rights reserved.</p>
         <p>
           Plated Digitally by{' '}
@@ -108,7 +108,7 @@ const Footer = () => {
         </p>
       </div>
 
-      <div className="hidden md:flex h-16 flex-col items-center justify-center space-y-1">
+      {/* <div className="hidden md:flex h-16 flex-col items-center justify-center space-y-1">
         <p>© 2025 Alaimagal Hotels. All rights reserved | Plated Digitally by{' '}
           <a
             className="font-semibold"
@@ -118,7 +118,7 @@ const Footer = () => {
           >
             The Pixelated Café
           </a></p>
-      </div>
+      </div> */}
 
       {/* Decorative Images */}
       <div className="absolute top-0 left-0 hidden sm:block">
