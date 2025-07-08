@@ -10,7 +10,7 @@ import { RiInstagramFill } from "react-icons/ri";
 const Footer = () => {
   return (
     <div id='contact' className="relative bg-[url('/footer-bg-2.png')] bg-cover bg-center">
-      <div className="flex flex-col md:flex-row w-full p-4 sm:p-5 h-auto md:h-56 items-center justify-between">
+      <div className="flex flex-col md:flex-row w-full p-4 sm:p-5 h-auto  items-center justify-between">
         <div className="w-full md:w-3/12 flex justify-center items-center">
           <img
             src="/footer-logo.png"
@@ -33,7 +33,7 @@ const Footer = () => {
           </ul>
         </div> */}
 
-        <div className="h-auto md:h-80 w-full md:w-6/12 flex flex-col justify-center items-center mt-4 md:mt-0 max-md:mb-3">
+        <div className="h-auto  w-full md:w-6/12 flex flex-col justify-center items-center mt-4 md:mt-0 max-md:mb-3">
           <h1 className={`${sansita.className} text-xl sm:text-2xl md:text-3xl font-bold font-sansita text-center`}>
             Reach out to us
           </h1>
@@ -65,6 +65,8 @@ const Footer = () => {
                 Ram Nagar,<br /> Coimbatore - 641009
               </p>
               </div>
+
+             
               
               
             </div>
@@ -80,6 +82,21 @@ const Footer = () => {
               <RiInstagramFill />
             </div>
           </div>
+
+           <div className="hidden h-16 pt-17 md:flex flex-col items-center justify-center space-y-1">
+        <p>© 2025 Alaimagal Hotels. All rights reserved.</p>
+        <p>
+          Plated Digitally by{' '}
+          <a
+            className="font-semibold"
+            target="_blank"
+            href="https://www.thepixelatedcafe.com"
+            rel="noopener noreferrer"
+          >
+            The Pixelated Café
+          </a>
+        </p>
+      </div>
         </div>
 
          <div className="w-full md:w-3/12 flex justify-center items-center">
@@ -93,7 +110,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className=" h-16 flex flex-col items-center justify-center space-y-1">
+      <div className="md:hidden h-16 flex flex-col items-center justify-center space-y-1">
         <p>© 2025 Alaimagal Hotels. All rights reserved.</p>
         <p>
           Plated Digitally by{' '}
