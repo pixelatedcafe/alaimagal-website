@@ -15,7 +15,7 @@ const Footer = () => {
           <img
             src="/footer-logo.png"
             alt="Alaimagal Hotels Logo"
-            className="w-64 sm:w-80 md:w-64 p-4 sm:p-6 md:p-10"
+            className="w-64 sm:w-80 md:w-72 p-4 sm:p-6 md:p-10"
           />
         </div>
 

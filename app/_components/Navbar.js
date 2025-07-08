@@ -8,6 +8,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home'); // Track active section
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Track mobile menu state
+  const [showContactPopup, setShowContactPopup] = useState(false); // Track contact popup state
 
   // Handle scroll event for navbar transparency and active section
   useEffect(() => {
@@ -20,7 +21,7 @@ const Navbar = () => {
       }
 
       // Set initial active section
-      const sections = ['home', 'menu', 'about', 'gallery', 'review', 'contact'];
+      const sections = ['home', 'menu', 'about', 'gallery', 'review'];
       let currentSection = 'home';
 
       sections.forEach((section) => {
@@ -48,7 +49,7 @@ const Navbar = () => {
       }
 
       // Determine the active section based on scroll position
-      const sections = ['home', 'menu', 'about', 'gallery', 'review', 'contact'];
+      const sections = ['home', 'menu', 'about', 'gallery', 'review'];
       let currentSection = 'home';
 
       sections.forEach((section) => {
@@ -82,12 +83,73 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
   };
 
+  // Handle contact click
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    setShowContactPopup(true);
+  };
+
+  // Close contact popup
+  const closeContactPopup = () => {
+    setShowContactPopup(false);
+  };
+
+  // Contact Popup Component
+  const ContactPopup = () => (
+    <div className="fixed inset-0 flex items-center justify-center z-50">
+      <div className="bg-white rounded-lg p-6 max-w-xs w-full mx-4 relative">
+        {/* Close button */}
+        <button
+          onClick={closeContactPopup}
+          className="absolute top-3 right-3 text-gray-500 text-xl"
+        >
+          <HiX />
+        </button>
+        
+        {/* Popup content */}
+        <div className="text-center">
+          <h3 className="text-lg font-semibold text-[#03552A] mb-4">Contact Us</h3>
+          
+          <div className="space-y-3">
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/1234567890" // Replace with actual WhatsApp number
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center p-3 border rounded-lg"
+            >
+              <div className="bg-green-500 p-2 rounded mr-3">
+                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.485 3.488"/>
+                </svg>
+              </div>
+              <span className="text-sm font-medium">WhatsApp</span>
+            </a>
+
+            {/* Email */}
+            <a
+              href="mailto:info@alaimagalhotel.com" // Replace with actual email
+              className="flex items-center p-3 border rounded-lg"
+            >
+              <div className="bg-blue-500 p-2 rounded mr-3">
+                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+              </div>
+              <span className="text-sm font-medium">Email</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   // Common nav links JSX for desktop (main navbar)
   const navLinks = (
     <ul className="flex pl-6 sm:pl-8 md:pl-12 lg:pl-16 xl:pl-20 2xl:pl-24 3xl:pl-28 font-semibold 
                    space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-12 xl:space-x-16 2xl:space-x-20 3xl:space-x-24 
                    text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-xl 3xl:text-2xl">
-      {['home', 'menu', 'about', 'gallery', 'review', 'contact'].map((section) => (
+      {['home', 'menu', 'about', 'gallery', 'review'].map((section) => (
         <li key={section} className="relative group">
           <a
             className={`${ 
@@ -105,6 +167,15 @@ const Navbar = () => {
           ></span>
         </li>
       ))}
+      <li className="relative group">
+        <a
+          className="transition-all duration-200 cursor-pointer"
+          onClick={handleContactClick}
+        >
+          Contact
+        </a>
+        <span className="absolute left-0 bottom-0 h-[2px] sm:h-[3px] md:h-[4px] bg-white transition-all duration-300 w-0 group-hover:w-full"></span>
+      </li>
     </ul>
   );
 
@@ -112,7 +183,7 @@ const Navbar = () => {
   const scrolledNavLinks = (
     <ul className="flex font-semibold space-x-3 sm:space-x-4 md:space-x-6 lg:space-x-8 xl:space-x-12 2xl:space-x-16 3xl:space-x-20 
                    text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-xl 3xl:text-2xl">
-      {['home', 'menu', 'about', 'gallery', 'review', 'contact'].map((section) => (
+      {['home', 'menu', 'about', 'gallery', 'review'].map((section) => (
         <li key={section} className="relative group">
           <a
             className={`${activeSection === section ? 'f' : ''} transition-all duration-200`}
@@ -127,13 +198,22 @@ const Navbar = () => {
           ></span>
         </li>
       ))}
+      <li className="relative group">
+        <a
+          className="transition-all duration-200 cursor-pointer"
+          onClick={handleContactClick}
+        >
+          Contact
+        </a>
+        <span className="absolute left-0 bottom-0 h-[2px] sm:h-[3px] md:h-[4px] bg-[#03552A] transition-all duration-300 w-0 group-hover:w-full"></span>
+      </li>
     </ul>
   );
 
-  // Mobile nav links (unchanged)
+  // Mobile nav links
   const mobileNavLinks = (
     <ul className="flex flex-col space-y-6 text-xl font-semibold">
-      {['home', 'menu', 'about', 'gallery', 'review', 'contact'].map((section) => (
+      {['home', 'menu', 'about', 'gallery', 'review'].map((section) => (
         <li key={section} className="relative group">
           <a
             className={`${
@@ -144,18 +224,27 @@ const Navbar = () => {
           >
             {section.charAt(0).toUpperCase() + section.slice(1)}
           </a>
-          {/* <span
-            className={`absolute left-0 bottom-0 h-[4px] bg-white transition-all duration-300 ${
-              activeSection === section ? 'w-full' : 'w-0 group-hover:w-full'
-            }`}
-          ></span> */}
         </li>
       ))}
+      <li className="relative group">
+        <a
+          className="hover:font-extrabold hover:text-2xl cursor-pointer"
+          onClick={() => {
+            handleLinkClick();
+            handleContactClick();
+          }}
+        >
+          Contact
+        </a>
+      </li>
     </ul>
   );
 
   return (
     <div className="">
+      {/* Contact Popup */}
+      {showContactPopup && <ContactPopup />}
+      
       {/* Desktop Navbar */}
       <div className="hidden md:block">
         {/* Main Navbar Section */}
@@ -223,7 +312,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Navbar Section - Unchanged */}
+      {/* Mobile Navbar Section */}
       <div className={`md:hidden w-full fixed z-40 bg-none ${
           scrolled ? 'bg-white' : 'bg-transparent'
         }`}>
@@ -271,8 +360,6 @@ const Navbar = () => {
             </p>
       </div>
           </div>
-
-         
         </div>
 
         {/* Overlay for mobile menu */}
@@ -285,7 +372,7 @@ const Navbar = () => {
         
       </div>
       
-      
+
     </div>
   );
 };
