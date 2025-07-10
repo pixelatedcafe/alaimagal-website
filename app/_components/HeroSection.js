@@ -14,9 +14,11 @@ const HeroSection = () => {
                 {/* Hero Title */}
                 <h1 className='text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-5xl 3xl:text-7xl 
                                pt-20 sm:pt-24 md:pt-[150px] lg:pt-[160px] xl:pt-[170px] 2xl:pt-48 3xl:pt-56 
-                               text-white font-extrabold py-4 sm:py-6 lg:py-8 xl:py-12 leading-tight'>
+                               text-white font-extrabold leading-tight'>
                   Authentic Non-Veg Delights.<br/> A Taste of Tradition.
                 </h1>
+
+                <h3 className='text-3xl text-white font-extrabold py-3'>In-House Dining & Catering Services.</h3>
                 
                 <h4 className='text-white text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl 2xl:text-2xl 3xl:text-4xl 
                                max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl 2xl:max-w-5xl 3xl:max-w-6xl 
@@ -52,8 +54,9 @@ const HeroSection = () => {
                 <div className='flex flex-col items-start gap-2 max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl 2xl:max-w-5xl 
                                pb-8 sm:pb-12 lg:pb-16 xl:pb-20'>
                   <h1 className='text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-xl'>
-                    Dine-In Available | Party Orders Taken 
+                    Dine-In & Catering Available | Party Orders Taken 
                   </h1>
+                  
                   <div className='flex items-center gap-2 flex-wrap'> 
                     <h1 className='text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-xl'>
                       Order Online on
@@ -101,7 +104,7 @@ const HeroSection = () => {
             <h1 className=' text-3xl xs:text-3xl sm:text-4xl pt-20 xs:pt-20 text-white font-extrabold leading-tight'>
               Authentic Non-Veg Delights.<br/> A Taste of Tradition.
             </h1>
-            
+            <h3 className='text-2xl text-white font-bold py-3'>In-House Dining & Catering Services.</h3>
             <div className='py-4 xs:py-5 flex justify-center'>
               <img src='/hero-image-mobile.png' alt='' 
                    className='w-80 xs:w-96 sm:w-[420px] max-w-full' />
@@ -121,7 +124,7 @@ const HeroSection = () => {
                 <Link href="https://maps.app.goo.gl/u6wbCTTGXtmzhWBz8" target="_blank" className="  ">
                 <button className='cursor-pointer border-2 text-base xs:text-lg sm:text-xl font-semibold border-white text-white 
                                 rounded-lg py-2 xs:py-2.5 px-6 xs:px-8 sm:px-10 hover:bg-white hover:text-black 
-                                transition-colors min-w-[120px] xs:min-w-[140px] cursor-pointer'>
+                                transition-colors min-w-[120px] xs:min-w-[140px]'>
                   Visit Us
                 </button>
               </Link>
@@ -130,7 +133,7 @@ const HeroSection = () => {
             {/* Zomato Section */}
             <div className='flex flex-col py-4 xs:py-5 items-start gap-1'>
               <h1 className='text-white text-base xs:text-lg sm:text-xl'>
-                Dine-In Available | Party Orders Taken
+                Dine-In & Catering Available | Party Orders Taken 
               </h1>
               <div className='flex items-center gap-2 py-2'>
                 <h1 className='text-white text-base xs:text-lg sm:text-xl'>Order Online On</h1>

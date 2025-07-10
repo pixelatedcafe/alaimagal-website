@@ -12,6 +12,14 @@ const About = () => {
             <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center font-extrabold">Welcome to Alaimagal Hotels</h3>
             <h6 className="text-lg sm:text-xl md:text-xl lg:text-2xl text-center font-semibold">A Taste of Tradition</h6>
 
+            <div className="flex md:hidden w-full md:w-5/12 justify-center items-center mt-4 md:mt-0">
+            <img
+              src="/about-us-logo.png"
+              alt="About Alaimagal Hotels"
+              className="w-[250px] xs:w-[180px] sm:w-[220px] md:w-[280px] lg:w-[320px] xl:w-[380px] max-w-full h-auto"
+            />
+          </div>
+
             <div className="flex flex-col pt-5 space-y-4 text-sm sm:text-base md:text-lg lg:text-xl text-justify">
               <p>
                 At Alaimagal Hotels, we take pride in serving authentic Tamil Nadu-style non-vegetarian cuisine with age-old recipes passed down through generations. Established with a passion for rich flavors and heartfelt hospitality, our hotel stands as a humble tribute to the culinary heritage of our land.
@@ -30,7 +38,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="w-full md:w-5/12 justify-center items-center flex mt-4 md:mt-0">
+          <div className="hidden md:flex w-full md:w-5/12 justify-center items-center mt-4 md:mt-0">
             <img
               src="/about-us-logo.png"
               alt="About Alaimagal Hotels"

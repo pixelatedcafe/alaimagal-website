@@ -318,7 +318,7 @@ const Navbar = () => {
         }`}>
         <div className={`flex items-center justify-between px-4 ${scrolled ? 'py-2': 'py-4'}`}>
           <div className="flex items-center">
-            <img src="/logo-main.png" alt="Alaimagal Hotel Logo" className="w-44 bg-none" />
+            <img src="/logo-main.png" alt="Alaimagal Hotel Logo" className="w-55 bg-none" />
           </div>
 
           {/* Hambuger Menu */}
