@@ -8,8 +8,12 @@ import Navbar from '../_components/Navbar'
 import Footer from '../_components/Footer'
 import Main from '../_components/Main'
 
-export const metadata = {
-  title: "Alaimagal Hotel",} 
+ export const metadata = {
+  title: "Alaimagal Hotel",
+  icons: {
+    icon: '/favicon.ico', // or .png/.svg
+  },
+} 
 
 
 const page = () => {

@@ -23,6 +23,7 @@ const geistMono = Geist_Mono({
 const metadata = {
   title: "Alaimagal Hotel" ,
   description: "Alaimagal Hotel - Your Gateway to Comfort and Luxury",
+  
 };
 
 export default function Layout({ children }) {

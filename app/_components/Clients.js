@@ -4,53 +4,65 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const Clients = () => {
   const reviews = [
+   {
+      name: "Thiru",
+      review: "Best restaurants in coimbatore. Nice food and service",
+      rating: 5,
+    },
+
+    {
+      name: "Dhiva",
+      review: "Kari dosa was excellent and service also superb. Must try",
+      rating: 5,
+    },
+    
     {
       name: "Alagesan",
-      review: "At Aaimagal Hotels, we take pride in serving authentic Tamil Nadu-style non-vegetarian cuisine with age-old recipes passed down through generations.",
-      rating: 5,
-    },
-    {
-      name: "John Doe",
-      review: "The food was absolutely amazing! I can't wait to come back.",
-      rating: 5,
-    },
-    {
-      name: "Jane Smith",
-      review: "A delightful dining experience with excellent service.",
-      rating: 4,
-    },
-    {
-      name: "Alice Johnson",
-      review: "The ambiance was perfect for a family dinner. Highly recommend!",
-      rating: 5,
-    },
-    {
-      name: "Bob Brown",
       review: "Great value for money. The portions were generous and tasty.",
       rating: 4,
     },
     {
-      name: "Sarah Wilson",
+      name: "Srijith SS",
+      review: "The food was absolutely amazing! I can't wait to come back.",
+      rating: 5,
+    },
+    {
+      name: "Barath Tamil",
+      review: "A delightful dining experience with excellent service.",
+      rating: 5,
+    },
+    {
+      name: "Roshini N",
+      review: "The ambiance was perfect for a family dinner. Highly recommend!",
+      rating: 5,
+    },
+    {
+      name: "Santhosh Sandy",
+      review: "Reminds me of my grandmother's cooking. Perfect spice levels!",
+      rating: 4,
+    },
+    {
+      name: "Kishore Dudde Srinivasan",
       review: "Exceptional traditional flavors! The spices were perfectly balanced.",
       rating: 5,
     },
     {
-      name: "Michael Chen",
+      name: "Sairam K",
       review: "Authentic Tamil cuisine at its finest. The service was impeccable.",
       rating: 5,
     },
     {
-      name: "Priya Sharma",
+      name: "Vikrant Vikaasa ",
       review: "Loved the homely atmosphere and the traditional cooking methods.",
       rating: 4,
     },
     {
-      name: "David Kumar",
+      name: "Sankar K G",
       review: "Outstanding food quality and reasonable prices. Highly recommended!",
       rating: 5,
     },
     {
-      name: "Lisa Thompson",
+      name: "Harish Kumar",
       review: "The ambiance reminded me of home cooking. Absolutely delicious!",
       rating: 5,
     },
@@ -60,7 +72,7 @@ const Clients = () => {
       rating: 4,
     },
     {
-      name: "Emma Johnson",
+      name: "Priya Menon",
       review: "Wonderful experience! The staff was friendly and food was amazing.",
       rating: 5,
     },
@@ -70,20 +82,10 @@ const Clients = () => {
       rating: 5,
     },
     {
-      name: "Maria Garcia",
+      name: "Hari",
       review: "Great vegetarian options too! The variety is impressive.",
       rating: 4,
-    },
-    {
-      name: "Vijay Nair",
-      review: "Reminds me of my grandmother's cooking. Perfect spice levels!",
-      rating: 5,
-    },
-    {
-      name: "Jennifer Lee",
-      review: "Exceptional service and mouth-watering dishes. Will visit again!",
-      rating: 5,
-    },
+    }
   ];
 
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
