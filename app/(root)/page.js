@@ -25,6 +25,12 @@ export const metadata = {
     "budget hotels with food Gandhipuram",
     "family dining Coimbatore",
     "authentic Tamil Nadu food",
+    "dosa",
+    "biryani",
+    "kuzhambu",
+    "Chicken fry",
+    "idly",
+    "idiyappam",
 
   ],
   alternates: {
