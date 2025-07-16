@@ -125,7 +125,7 @@ const Navbar = () => {
         <div className="space-y-4">
           {/* WhatsApp */}
           <a
-            href="https://wa.me/1234567890" // Replace with actual WhatsApp number
+            href="https://wa.me/919626066228" // Replace with actual WhatsApp number
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center p-4 bg-gradient-to-r from-green-600/20 to-green-500/20 backdrop-blur-sm border border-green-500/30 rounded-xl hover:from-green-600/30 hover:to-green-500/30 hover:border-green-400/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25"
@@ -140,7 +140,7 @@ const Navbar = () => {
 
           {/* Phone */}
           <a
-            href="tel:+1234567890" // Replace with actual phone number
+            href="tel:+919626066228" // Replace with actual phone number
             className="group flex items-center p-4 bg-gradient-to-r from-blue-600/20 to-blue-500/20 backdrop-blur-sm border border-blue-500/30 rounded-xl hover:from-blue-600/30 hover:to-blue-500/30 hover:border-blue-400/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
           >
             <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-3 rounded-xl mr-4 shadow-lg group-hover:shadow-blue-500/50 transition-all duration-300">
@@ -153,7 +153,7 @@ const Navbar = () => {
 
           {/* Email */}
           <a
-            href="mailto:info@alaimagalhotel.com" // Replace with actual email
+            href="mailto:info@alaimagal.com" // Replace with actual email
             className="group flex items-center p-4 bg-gradient-to-r from-purple-600/20 to-purple-500/20 backdrop-blur-sm border border-purple-500/30 rounded-xl hover:from-purple-600/30 hover:to-purple-500/30 hover:border-purple-400/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
           >
             <div className="bg-gradient-to-br from-purple-500 to-purple-600 p-3 rounded-xl mr-4 shadow-lg group-hover:shadow-purple-500/50 transition-all duration-300">

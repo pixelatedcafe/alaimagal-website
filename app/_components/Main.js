@@ -17,7 +17,7 @@ const Main = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowContent(true);
-    }, 5000); // Match splash screen duration
+    }, 3000); // Match splash screen duration
 
     return () => clearTimeout(timer);
   }, []);

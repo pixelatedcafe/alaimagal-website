@@ -31,7 +31,7 @@ const HeroSection = () => {
                 {/* Hero Buttons */}
                 <div className='flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 lg:space-x-6 xl:space-x-8 
                                py-6 sm:py-8 lg:py-10 xl:py-10'>
-                                <Link href="/menu.pdf" className="  ">
+                                <Link href="/menu.pdf" target='_blank' className="  ">
                   <button className='bg-white font-semibold text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl 
                                    flex items-center justify-center gap-1 px-4 sm:px-5 lg:px-6 xl:px-7 2xl:px-8 
                                    py-2 sm:py-2.5 lg:py-3 xl:py-3 rounded-lg hover:bg-gray-100 transition-colors 
@@ -116,11 +116,14 @@ const HeroSection = () => {
 
             {/* Hero Buttons */}
             <div className='flex justify-center items-center xs:flex-row space-x-5 xs:space-y-0 xs:space-x-4 sm:space-x-8 py-3'>
+               <Link href="/menu.pdf" target='_blank' className="  ">
               <button className='bg-white font-semibold text-base xs:text-lg sm:text-xl flex items-center justify-center gap-1 
                                px-6 xs:px-7 sm:px-8 py-2 xs:py-2.5 rounded-lg hover:bg-gray-100 transition-colors 
                                min-w-[140px] xs:min-w-[160px]'>
                 View Menu <span className='text-xl xs:text-2xl sm:text-3xl'><BiSolidFoodMenu /></span>
+              
               </button>
+              </Link>
                 <Link href="https://maps.app.goo.gl/u6wbCTTGXtmzhWBz8" target="_blank" className="  ">
                 <button className='cursor-pointer border-2 text-base xs:text-lg sm:text-xl font-semibold border-white text-white 
                                 rounded-lg py-2 xs:py-2.5 px-6 xs:px-8 sm:px-10 hover:bg-white hover:text-black 

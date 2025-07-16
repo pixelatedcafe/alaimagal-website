@@ -5,6 +5,7 @@ import { sansita } from '../layout';
 import { IoLogoWhatsapp } from "react-icons/io";
 import { IoMail } from "react-icons/io5";
 import { RiInstagramFill } from "react-icons/ri";
+import Link from 'next/link';
 
 
 const Footer = () => {
@@ -72,15 +73,22 @@ const Footer = () => {
             </div>
           </div>
           <div className='flex justify-center items-center space-x-4 pt-4 sm:pt-5 text-2xl'>
+            
+            <Link href="https://wa.me/919626066228" target="_blank">
             <div>
               <IoLogoWhatsapp />
             </div>
+            </Link>
+            <Link href="mailto:info@alaimagal.com" target="_blank">
             <div>
               <IoMail />
             </div>
+            </Link>
+            <Link href="https://www.instagram.com/alaimagalhotels/" target="_blank">
             <div>
               <RiInstagramFill />
             </div>
+            </Link>
           </div>
 
            <div className="hidden h-16 pt-17 md:flex flex-col items-center justify-center space-y-1">
