@@ -345,7 +345,7 @@ const SignatureCreations = () => {
 
         <div className='flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 lg:space-x-8 py-4 lg:py-14'>
           <Link href="/menu.pdf" target='_blank' className="  ">
-          <button className='border-2 border-[#03552A] font-semibold text-lg lg:text-xl flex items-center justify-center gap-1 px-3 py-2 rounded-lg hover:bg-[#03552A] hover:text-white transition-colors'>
+          <button className='border-2 border-[#03552A] w-full font-semibold text-lg lg:text-xl flex items-center justify-center gap-1 px-3 py-2 rounded-lg hover:bg-[#03552A] hover:text-white transition-colors'>
             View Full Menu 
           </button>
           </Link>
